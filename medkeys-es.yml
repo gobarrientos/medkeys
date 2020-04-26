@@ -1,0 +1,141 @@
+# Archivo addon para espanso
+
+# Este addon contiene configuracion para profesionales de la salud con simbolos
+# usados regularmente, asi también estudiantes.
+# MEDKEYS: https://github.com/gobarrientos/medkeys
+# ESPANSO: https://espanso.org/
+
+# matches corresponden a la reglas de sustitución, que se inician con "trigger"
+# y luego son reemplazas en la linea inferior con "replace".
+
+# El formato de escritura para su función correcta debe ser UNICODE, no ANSI.
+matches:
+  # Simple text replacement
+  - trigger: "!delta"
+    replace: "∆"
+
+  - trigger: "!aumenta"
+    replace: "↑"
+
+  - trigger: "!disminuye"
+    replace: "↓"
+
+  - trigger: "-->"
+    replace: "→"
+
+  - trigger: "<--"
+    replace: "←"
+
+  - trigger: "<-->"
+   replace: "↔"
+
+  - trigger: "!numero"
+    replace: "№"
+
+  - trigger: "!micro"
+    replace: "µ"
+
+  - trigger: "1/2"
+    replace: "½"
+
+  - trigger: "1/4"
+    replace: "¼"
+
+  - trigger: "3/4"
+    replace: "¾"
+
+  - trigger: "1/3"
+    replace: "⅓"
+
+  - trigger: "2/3"
+    replace: "⅔"
+
+  - trigger: "!producto"
+    replace: "∏"
+
+  - trigger: "!sumatoria"
+    replace: "∑"
+
+  - trigger: "ρ"
+    replace: "!presion"
+
+  - trigger: "!alfa"
+    replace: "a"
+
+  - trigger: "!beta"
+    replace: "ß"
+
+  - trigger: "!gama"
+    replace: "Ɣ"
+
+  - trigger: "masmenos"
+    replace: "±"
+
+  - trigger: "mayorque"
+    replace: ">"
+
+  - trigger: "menorque"
+    replace: "<"
+
+  - trigger: "menoroig"
+    replace: "≤"
+
+  - trigger: "mayoroig"
+    replace: "≥"
+
+  - trigger: "raizcuad"
+    replace: "√"
+
+  - trigger: "noigual"
+    replace: "≠"
+
+  - trigger: "!muertes"
+    replace: "†"
+
+  - trigger: "!infinito"
+    replace: "∞"
+
+  - trigger: "!masculino"
+    replace: "♂"
+
+  - trigger: "!femenino"
+    replace: "♀"
+#
+#  - trigger: ""
+#    replace: ""
+#
+#  - trigger: ""
+#    replace: ""
+#
+#  - trigger: ""
+#    replace: ""
+#
+#  - trigger: ""
+#    replace: ""
+#
+#  - trigger: ""
+#    replace: ""
+#
+#  - trigger: ""
+#    replace: ""
+#
+#  - trigger: ""
+#    replace: ""
+#
+  # Dates
+  - trigger: ":fecha"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d/%m/%Y"
+
+# Shell commands
+#  - trigger: ":shell"
+#    replace: "{{output}}"
+#    vars:
+#      - name: output
+#        type: shell
+#        params:
+#          cmd: "echo Hello from your shell"
